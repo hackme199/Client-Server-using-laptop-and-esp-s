@@ -2,6 +2,14 @@ import socket
 import select
 import errno
 import sys
+from machine import Signal,Pin
+
+led1 = Signal(0,Pin.OUT,invert=False)
+led2 = Signal(4,Pin.OUT,invert=False)
+led3 = Signal(5,Pin.OUT,invert=False)
+led1.value(0)
+led2.value(0)
+led3.value(0)
 
 HEADER_LENGTH = 10
 
@@ -26,8 +34,8 @@ username_header = f(len(username),HEADER_LENGTH).encode('utf-8')
 client_socket.send(username_header + username)
 
 while 1:
-    message = input("{} > ".format(my_username))
-    # message = ''
+    # message = input("{} > ".format(my_username))
+    message = ''
 
     if message:
         message = message.encode("utf-8")
@@ -46,7 +54,37 @@ while 1:
 
             message_header = client_socket.recv(HEADER_LENGTH)
             message_length = int(message_header.decode("utf-8").strip())
-            message = client_socket.recv(message_length).decode("utf-8")
+            message = str(client_socket.recv(message_length).decode("utf-8"))
+            if message == '4on':
+                led1.value(1)
+                client_socket.send((f(14,10)+"led4 STATUS:ON").encode('utf-8'))
+                print("{} > {}".format(username,message))
+                continue
+            if message == '4off':
+                led1.value(0)
+                client_socket.send((f(15,10)+"led4 STATUS:OFF").encode('utf-8'))
+                print("{} > {}".format(username,message))
+                continue
+            if message == '5on':
+                led2.value(1)
+                client_socket.send((f(14,10)+"led5 STATUS:ON").encode('utf-8'))
+                print("{} > {}".format(username,message))
+                continue
+            if message == '5off':
+                led2.value(0)
+                client_socket.send((f(15,10)+"led5 STATUS:OFF").encode('utf-8'))
+                print("{} > {}".format(username,message))
+                continue
+            if message == '6on':
+                led3.value(1)
+                client_socket.send((f(14,10)+"led6 STATUS:ON").encode('utf-8'))
+                print("{} > {}".format(username,message))
+                continue
+            if message == '6off':
+                led3.value(0)
+                client_socket.send((f(15,10)+"led6 STATUS:OFF").encode('utf-8'))
+                print("{} > {}".format(username,message))
+                continue
 
             print("{} > {}".format(username,message))
 

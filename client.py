@@ -40,14 +40,14 @@ while 1:
             if not len(username_header):
                 print("connection closed by the server")
                 sys.exit()
-            username_length = int(username_header.decode("utf-8").strip())
-            username = client_socket.recv(username_length).decode("utf-8")
+            # username_length = int(username_header.decode("utf-8").strip())
+            # username = client_socket.recv(username_length).decode("utf-8")
 
-            message_header = client_socket.recv(HEADER_LENGTH)
-            message_length = int(message_header.decode("utf-8").strip())
-            message = client_socket.recv(message_length).decode("utf-8")
+            # message_header = client_socket.recv(HEADER_LENGTH)
+            # message_length = int(message_header.decode("utf-8").strip())
+            # message = client_socket.recv(message_length).decode("utf-8")
 
-            print("{} > {}".format(username,message))
+            # print("{} > {}".format(username,message))
 
     # except IOError as e:
     #     if e.errno != errno.EAGAIN and e.errno != errno.EWOULDBLOCK:
