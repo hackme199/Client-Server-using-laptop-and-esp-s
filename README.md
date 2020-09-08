@@ -11,7 +11,7 @@ The controlling machine runs the client script, connects to server and commands 
 to do an already implemented simple functionality within code to control a 3 X 3
 LED Matrix. 
 
-Each ESP controls a row to 3 LED's. LED's can be turned on or off completly
+Each ESP controls a row to 3 LED's. LED's can be turned on or off completely
 independent of each other.
 
 <img src ="https://github.com/hackme199/Client-Server-using-laptop-and-esp-s/blob/master/ESPClientServerComm(2).png">
