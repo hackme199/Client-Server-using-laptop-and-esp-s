@@ -14,4 +14,4 @@ LED Matrix.
 Each ESP controls a row to 3 LED's. LED's can be turned on or off completly
 independent of each other.
 
-![alt text](https://drive.google.com/file/d/1t9mnJa856ukkotpOxfUIcMdC5qjQrtGm/view?usp=sharing)
+![alt text](https://github.com/hackme199/Client-Server-using-laptop-and-esp-s/ESPClientServerComm(2).png
