@@ -1,4 +1,4 @@
-# Client-Server-using-laptop-and-esp-s
+# Client-Server using Laptop(s) and ESP's
 
 Just a practical, hardware touch to Client-Server topology.
 Developed basic client-server scripts using python socket module on localhost
@@ -13,3 +13,5 @@ LED Matrix.
 
 Each ESP controls a row to 3 LED's. LED's can be turned on or off completly
 independent of each other.
+
+![alt text](https://drive.google.com/file/d/1t9mnJa856ukkotpOxfUIcMdC5qjQrtGm/view?usp=sharing)
